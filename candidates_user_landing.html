@@ -4,8 +4,87 @@
     <meta charset="utf-8">
     <title>Welcome</title>
     <style>
+      :root {
+        --primary: #2563eb;
+        --primary-hover: #1d4ed8;
+        --bg-color: #f8fafc;
+        --card-bg: #ffffff;
+        --text-main: #1e293b;
+        --text-muted: #64748b;
+        --border-color: #cbd5e1;
+        --radius: 8px;
+      }
       * {
-        font-family: arial;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Arial, sans-serif;
+      }
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        margin: 0;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+      }
+      header, main, footer {
+        background: var(--card-bg);
+        width: 100%;
+        max-width: 600px;
+        padding: 2rem;
+        margin-bottom: 1.5rem;
+        border-radius: var(--radius);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      }
+      header h1 {
+        margin: 0 0 0.5rem 0;
+        color: var(--primary);
+        font-size: 1.75rem;
+      }
+      header p {
+        margin: 0;
+        color: var(--text-muted);
+        font-weight: 500;
+      }
+      h2 {
+        color: var(--text-main);
+        font-size: 1.2rem;
+        border-bottom: 2px solid #f1f5f9;
+        padding-bottom: 0.5rem;
+        margin-top: 1.5rem;
+      }
+      button, input[type="button"] {
+        display: block;
+        width: 100%;
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        padding: 0.85rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: var(--radius);
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        margin-top: 0.75rem;
+        text-align: center;
+      }
+      button:hover, input[type="button"]:hover {
+        background-color: var(--primary-hover);
+      }
+      footer {
+        text-align: center;
+        padding: 1rem;
+        margin-bottom: 0;
+      }
+      footer a {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-weight: 600;
+      }
+      footer a:hover {
+        color: var(--primary);
+        text-decoration: underline;
       }
     </style>
   </head>
@@ -16,11 +95,11 @@
     </header>
     <main>
       <h2>Campaigns</h2>
-      <button type="button" onclick="window.location.href='candidates_editable_campaign_page.html';">Edit Party List 1 Campaign Page</button><br>
-      <button type="button" onclick="window.location.href='candidates_campaign_page.html';">Party List 2</button><br>
-      <button type="button" onclick="window.location.href='candidates_campaign_page.html';">Party List 3</button><br>
+      <button type="button" onclick="window.location.href='candidates_editable_campaign_page.html';">Edit Party List 1 Campaign Page</button>
+      <button type="button" onclick="window.location.href='candidates_campaign_page.html';">Party List 2</button>
+      <button type="button" onclick="window.location.href='candidates_campaign_page.html';">Party List 3</button>
       <h2>Vote now!</h2>
-      <button type="button" onclick="window.location.href='candidates_voting_page.html';">View Voting Progress</button><br><br>
+      <button type="button" onclick="window.location.href='candidates_voting_page.html';">View Voting Progress</button>
     </main>
     <footer>
       <a href="main.html">Logout.</a>

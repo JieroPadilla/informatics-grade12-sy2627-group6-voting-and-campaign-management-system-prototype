@@ -4,18 +4,120 @@
     <meta charset="utf-8">
     <title>Campaigns</title>
     <style>
+      :root {
+        --primary: #2563eb;
+        --primary-hover: #1d4ed8;
+        --danger: #dc2626;
+        --danger-hover: #b91c1c;
+        --bg-color: #f8fafc;
+        --card-bg: #ffffff;
+        --text-main: #1e293b;
+        --text-muted: #64748b;
+        --border-color: #cbd5e1;
+        --radius: 8px;
+      }
       * {
-        font-family: arial;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Arial, sans-serif;
+      }
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        margin: 0;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+      }
+      header, main, footer {
+        background: var(--card-bg);
+        width: 100%;
+        max-width: 700px;
+        padding: 2rem;
+        margin-bottom: 1.5rem;
+        border-radius: var(--radius);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      header h1 {
+        margin: 0;
+        color: var(--primary);
+        font-size: 1.75rem;
+      }
+      .delete-btn {
+        background-color: var(--danger);
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        font-weight: 600;
+        border-radius: var(--radius);
+        cursor: pointer;
+      }
+      .delete-btn:hover {
+        background-color: var(--danger-hover);
+      }
+      h2 {
+        color: var(--text-main);
+        font-size: 1.25rem;
+        margin-top: 0;
       }
       textarea {
-        width: 80%;
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius);
+        font-family: inherit;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        resize: vertical;
+      }
+      input[type="submit"], button {
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: var(--radius);
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+      }
+      input[type="submit"]:hover {
+        background-color: var(--primary-hover);
+      }
+      .back-btn {
+        background-color: #64748b;
+        margin-top: 1rem;
+        width: 100%;
+      }
+      .back-btn:hover {
+        background-color: #475569;
+      }
+      footer {
+        text-align: center;
+        padding: 1rem;
+        margin-bottom: 0;
+      }
+      footer a {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-weight: 600;
+      }
+      footer a:hover {
+        color: var(--primary);
+        text-decoration: underline;
       }
     </style>
   </head>
   <body>
     <header>
       <h1>Party List Campaign</h1>
-      <button type="button">Delete Campaign</button>
+      <button type="button" class="delete-btn">Delete Campaign</button>
     </header>
     <main>
       <h2>Edit About Us</h2>
@@ -27,11 +129,10 @@
 
           Ratione reprehenderit ipsa dicta minim. Pariatur dignissimos nulla corrupti obcaecati. Ad quasi magni provident dicta. Ipsa magni ullamco commodo sunt corrupti lorem. Id enim anim exercitation elit aliquip esse porro excepteur sunt praesentium adipisci magnam neque tempora.
         </textarea>
-        <br>
+        <br><br>
         <input type="submit" value="Submit">
       </form>
-      <br>
-      <button type="button" onclick="window.location.href='admin_user_landing.html';">Go back</button><br><br>
+      <button type="button" class="back-btn" onclick="window.location.href='admin_user_landing.html';">Go back</button>
     </main>
     <footer>
       <a href="admin_main.html">Logout.</a>

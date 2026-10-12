@@ -4,8 +4,91 @@
     <meta charset="utf-8">
     <title>Vote</title>
     <style>
+      :root {
+        --primary: #2563eb;
+        --primary-hover: #1d4ed8;
+        --bg-color: #f8fafc;
+        --card-bg: #ffffff;
+        --text-main: #1e293b;
+        --text-muted: #64748b;
+        --border-color: #cbd5e1;
+        --radius: 8px;
+      }
       * {
-        font-family: arial;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Arial, sans-serif;
+      }
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        margin: 0;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+      }
+      header, main, footer {
+        background: var(--card-bg);
+        width: 100%;
+        max-width: 700px;
+        padding: 2rem;
+        margin-bottom: 1.5rem;
+        border-radius: var(--radius);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      }
+      header h1 {
+        margin: 0;
+        color: var(--primary);
+        font-size: 1.75rem;
+      }
+      h2 {
+        color: var(--primary);
+        font-size: 1.15rem;
+        border-bottom: 2px solid #f1f5f9;
+        padding-bottom: 0.3rem;
+        margin-top: 1.5rem;
+      }
+      .vote-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #f8fafc;
+      }
+      input[type="checkbox"] {
+        transform: scale(1.2);
+        cursor: pointer;
+      }
+      input[type="submit"], button {
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: var(--radius);
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        margin-top: 1rem;
+        width: 100%;
+      }
+      input[type="submit"]:hover, button:hover {
+        background-color: var(--primary-hover);
+      }
+      footer {
+        text-align: center;
+        padding: 1rem;
+        margin-bottom: 0;
+      }
+      footer a {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-weight: 600;
+      }
+      footer a:hover {
+        color: var(--primary);
+        text-decoration: underline;
       }
     </style>
   </head>
@@ -16,78 +99,52 @@
     <main>
       <form>
         <h2>President</h2>
-        <label for="pc1">Candidate 1 (Party List 1)</label>
-        <input type="checkbox" id="pc1" name="pc1"><br>
-        <label for="pc2">Candidate 2 (Party List 2)</label>
-        <input type="checkbox" id="pc2" name="pc2"><br>
-        <label for="pc3">Candidate 3 (Party List 3)</label>
-        <input type="checkbox" id="pc3" name="pc3"><br>
+        <div class="vote-item"><label for="pc1">Candidate 1 (Party List 1)</label><input type="checkbox" id="pc1" name="pc1"></div>
+        <div class="vote-item"><label for="pc2">Candidate 2 (Party List 2)</label><input type="checkbox" id="pc2" name="pc2"></div>
+        <div class="vote-item"><label for="pc3">Candidate 3 (Party List 3)</label><input type="checkbox" id="pc3" name="pc3"></div>
 
         <h2>Vice President</h2>
-        <label for="vpc1">Candidate 1 (Party List 1)</label>
-        <input type="checkbox" id="vpc1" name="vpc1"><br>
-        <label for="vpc2">Candidate 2 (Party List 2)</label>
-        <input type="checkbox" id="vpc2" name="vpc2"><br>
-        <label for="vpc3">Candidate 3 (Party List 3)</label>
-        <input type="checkbox" id="vpc3" name="vpc3"><br>
+        <div class="vote-item"><label for="vpc1">Candidate 1 (Party List 1)</label><input type="checkbox" id="vpc1" name="vpc1"></div>
+        <div class="vote-item"><label for="vpc2">Candidate 2 (Party List 2)</label><input type="checkbox" id="vpc2" name="vpc2"></div>
+        <div class="vote-item"><label for="vpc3">Candidate 3 (Party List 3)</label><input type="checkbox" id="vpc3" name="vpc3"></div>
 
         <h2>Secretary</h2>
-        <label for="sc1">Candidate 1 (Party List 1)</label>
-        <input type="checkbox" id="sc1" name="sc1"><br>
-        <label for="sc2">Candidate 2 (Party List 2)</label>
-        <input type="checkbox" id="sc2" name="sc2"><br>
-        <label for="sc3">Candidate 3 (Party List 3)</label>
-        <input type="checkbox" id="sc3" name="sc3"><br>
+        <div class="vote-item"><label for="sc1">Candidate 1 (Party List 1)</label><input type="checkbox" id="sc1" name="sc1"></div>
+        <div class="vote-item"><label for="sc2">Candidate 2 (Party List 2)</label><input type="checkbox" id="sc2" name="sc2"></div>
+        <div class="vote-item"><label for="sc3">Candidate 3 (Party List 3)</label><input type="checkbox" id="sc3" name="sc3"></div>
 
         <h2>Auditor</h2>
-        <label for="ac1">Candidate 1 (Party List 1)</label>
-        <input type="checkbox" id="ac1" name="ac1"><br>
-        <label for="ac2">Candidate 2 (Party List 2)</label>
-        <input type="checkbox" id="ac2" name="ac2"><br>
-        <label for="ac3">Candidate 3 (Party List 3)</label>
-        <input type="checkbox" id="ac3" name="ac3"><br>
+        <div class="vote-item"><label for="ac1">Candidate 1 (Party List 1)</label><input type="checkbox" id="ac1" name="ac1"></div>
+        <div class="vote-item"><label for="ac2">Candidate 2 (Party List 2)</label><input type="checkbox" id="ac2" name="ac2"></div>
+        <div class="vote-item"><label for="ac3">Candidate 3 (Party List 3)</label><input type="checkbox" id="ac3" name="ac3"></div>
 
         <h2>Public Information Officer</h2>
-        <label for="pioc1">Candidate 1 (Party List 1)</label>
-        <input type="checkbox" id="pioc1" name="pioc1"><br>
-        <label for="pioc2">Candidate 2 (Party List 2)</label>
-        <input type="checkbox" id="pioc2" name="pioc2"><br>
-        <label for="pioc3">Candidate 3 (Party List 3)</label>
-        <input type="checkbox" id="pioc3" name="pioc3"><br>
+        <div class="vote-item"><label for="pioc1">Candidate 1 (Party List 1)</label><input type="checkbox" id="pioc1" name="pioc1"></div>
+        <div class="vote-item"><label for="pioc2">Candidate 2 (Party List 2)</label><input type="checkbox" id="pioc2" name="pioc2"></div>
+        <div class="vote-item"><label for="pioc3">Candidate 3 (Party List 3)</label><input type="checkbox" id="pioc3" name="pioc3"></div>
 
         <h2>Peace Officer</h2>
-        <label for="poc1">Candidate 1 (Party List 1)</label>
-        <input type="checkbox" id="poc1" name="poc1"><br>
-        <label for="poc2">Candidate 2 (Party List 2)</label>
-        <input type="checkbox" id="poc2" name="poc2"><br>
-        <label for="poc3">Candidate 3 (Party List 3)</label>
-        <input type="checkbox" id="poc3" name="poc3"><br>
+        <div class="vote-item"><label for="poc1">Candidate 1 (Party List 1)</label><input type="checkbox" id="poc1" name="poc1"></div>
+        <div class="vote-item"><label for="poc2">Candidate 2 (Party List 2)</label><input type="checkbox" id="poc2" name="poc2"></div>
+        <div class="vote-item"><label for="poc3">Candidate 3 (Party List 3)</label><input type="checkbox" id="poc3" name="poc3"></div>
 
         <h2>Grade Level Councilors</h2>
-        <label for="glcoc1">Candidate 1 (Party List 1)</label>
-        <input type="checkbox" id="glcoc1" name="glcoc1"><br>
-        <label for="glcoc2">Candidate 2 (Party List 2)</label>
-        <input type="checkbox" id="glcoc2" name="glcoc2"><br>
-        <label for="glcoc3">Candidate 3 (Party List 3)</label>
-        <input type="checkbox" id="glcoc3" name="glcoc3"><br>
+        <div class="vote-item"><label for="glcoc1">Candidate 1 (Party List 1)</label><input type="checkbox" id="glcoc1" name="glcoc1"></div>
+        <div class="vote-item"><label for="glcoc2">Candidate 2 (Party List 2)</label><input type="checkbox" id="glcoc2" name="glcoc2"></div>
+        <div class="vote-item"><label for="glcoc3">Candidate 3 (Party List 3)</label><input type="checkbox" id="glcoc3" name="glcoc3"></div>
 
         <h2>Grade Level Chairperson</h2>
-        <label for="glchc1">Candidate 1 (Party List 1)</label>
-        <input type="checkbox" id="glchc1" name="glchc1"><br>
-        <label for="glchc2">Candidate 2 (Party List 2)</label>
-        <input type="checkbox" id="glchc2" name="glchc2"><br>
-        <label for="glchc3">Candidate 3 (Party List 3)</label>
-        <input type="checkbox" id="glchc3" name="glchc3"><br>
+        <div class="vote-item"><label for="glchc1">Candidate 1 (Party List 1)</label><input type="checkbox" id="glchc1" name="glchc1"></div>
+        <div class="vote-item"><label for="glchc2">Candidate 2 (Party List 2)</label><input type="checkbox" id="glchc2" name="glchc2"></div>
+        <div class="vote-item"><label for="glchc3">Candidate 3 (Party List 3)</label><input type="checkbox" id="glchc3" name="glchc3"></div>
 
         <h2>Grade Level Representatives</h2>
-        <label for="glrc1">Candidate 1 (Party List 1)</label>
-        <input type="checkbox" id="glrc1" name="glrc1"><br>
-        <label for="glrc2">Candidate 2 (Party List 2)</label>
-        <input type="checkbox" id="glrc2" name="glrc2"><br>
-        <label for="glcrc3">Candidate 3 (Party List 3)</label>
-        <input type="checkbox" id="glrc3" name="glrc3"><br><br>
-        <input type="submit" value="Submit"><br>
-        <button type="button" onClick="window.location.href='user_landing.html';">Return</button><br><br>
+        <div class="vote-item"><label for="glrc1">Candidate 1 (Party List 1)</label><input type="checkbox" id="glrc1" name="glrc1"></div>
+        <div class="vote-item"><label for="glrc2">Candidate 2 (Party List 2)</label><input type="checkbox" id="glrc2" name="glrc2"></div>
+        <div class="vote-item"><label for="glrc3">Candidate 3 (Party List 3)</label><input type="checkbox" id="glrc3" name="glrc3"></div>
+
+        <input type="submit" value="Submit">
+        <button type="button" onClick="window.location.href='user_landing.html';">Return</button>
       </form>
     </main>
     <footer>
