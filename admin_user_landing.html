@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome</title>
+    <style>
+      * {
+        font-family: arial;
+      }
+      #addPartylist {
+        position: fixed;
+        border-style: solid;
+        border-width: 1px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 1em;
+        width: 20%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome, Admin!</h1>
+    </header>
+    <main>
+      <h2>Edit Campaigns</h2>
+      <button type="button" onclick="window.location.href='admin_campaign_page.html';">Edit Party List 1</button><br>
+      <button type="button" onclick="window.location.href='admin_campaign_page.html';">Edit Party List 2</button><br>
+      <button type="button" onclick="window.location.href='admin_campaign_page.html';">Edit Party List 3</button><br>
+      <button type="button" onclick="addPartylist()">Add Party List</button><br>
+      <h2>Edit Candidates</h2>
+      <button type="button" onclick="window.location.href='admin_voting_page.html';">Manage Candidates</button><br><br>
+      <div id="addPartylist" style="display:none;">
+        <button type="button" onclick="addPartylist()" style="position: absolute; top: 5px; right: 5px">x</button>
+        <form>
+        <label for="name">Party List Name</label><br>
+        <textarea id="name" name="name" style="width:80%;">Party List 4</textarea><br><br>
+        <input type="submit" value="Save">
+      </form>
+      </div>
+      <script>
+        function addPartylist() {
+          var x = document.getElementById("addPartylist");
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+        }
+      </script>
+    </main>
+    <footer>
+      <a href="admin_main.html">Logout.</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome</title>
+    <style>
+      * {
+        font-family: arial;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Input Candidate Credentials</h1>
+    </header>
+    <main>
+      <form>
+        <label for="name">Candidate Name</label><br>
+        <textarea id="name" name="name">Candidate 4</textarea><br><br>
+        <label for="partylists">Choose Party List</label><br>
+        <select name="partylists" id="partylists">
+          <option value="partylist_1">Party List 1</option>
+          <option value="partylist_2">Party List 2</option>
+          <option value="partylist_3">Party List 3</option>
+        </select><br><br>
+        <input type="submit" value="Save"><br><br>
+      </form>
+      <button type="button" onclick="window.location.href='admin_voting_page.html';">Return</button><br><br>
+    </main>
+    <footer>
+      <a href="admin_main.html">Logout.</a>
+    </footer>
+  </body>
+</html>

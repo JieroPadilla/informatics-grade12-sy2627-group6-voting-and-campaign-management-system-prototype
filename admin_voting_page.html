@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vote</title>
+    <style>
+      * {
+        font-family: arial;
+      }
+      #addCandidate {
+        position: fixed;
+        border-style: solid;
+        border-width: 1px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 1em;
+        width: 20%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Edit Candidates</h1>
+    </header>
+    <main>
+      <form>
+        <h2>President</h2>
+        <textarea>Candidate 1 (Party List 1)</textarea><br>
+        <textarea>Candidate 2 (Party List 2)</textarea><br>
+        <textarea>Candidate 3 (Party List 3)</textarea><br>
+        <button type="button" onclick="addCandidate()">Add Candidate</button>
+
+        <h2>Vice President</h2>
+        <textarea>Candidate 1 (Party List 1)</textarea><br>
+        <textarea>Candidate 2 (Party List 2)</textarea><br>
+        <textarea>Candidate 3 (Party List 3)</textarea><br>
+        <button type="button" onclick="addCandidate()">Add Candidate</button>
+
+        <h2>Secretary</h2>
+        <textarea>Candidate 1 (Party List 1)</textarea><br>
+        <textarea>Candidate 2 (Party List 2)</textarea><br>
+        <textarea>Candidate 3 (Party List 3)</textarea><br>
+        <button type="button" onclick="addCandidate()">Add Candidate</button>
+
+        <h2>Auditor</h2>
+        <textarea>Candidate 1 (Party List 1)</textarea><br>
+        <textarea>Candidate 2 (Party List 2)</textarea><br>
+        <textarea>Candidate 3 (Party List 3)</textarea><br>
+        <button type="button" onclick="addCandidate()">Add Candidate</button>
+
+        <h2>Public Information Officer</h2>
+        <textarea>Candidate 1 (Party List 1)</textarea><br>
+        <textarea>Candidate 2 (Party List 2)</textarea><br>
+        <textarea>Candidate 3 (Party List 3)</textarea><br>
+        <button type="button" onclick="addCandidate()">Add Candidate</button>
+
+        <h2>Peace Officer</h2>
+        <textarea>Candidate 1 (Party List 1)</textarea><br>
+        <textarea>Candidate 2 (Party List 2)</textarea><br>
+        <textarea>Candidate 3 (Party List 3)</textarea><br>
+        <button type="button" onclick="addCandidate()">Add Candidate</button>
+
+        <h2>Grade Level Councilors</h2>
+        <textarea>Candidate 1 (Party List 1)</textarea><br>
+        <textarea>Candidate 2 (Party List 2)</textarea><br>
+        <textarea>Candidate 3 (Party List 3)</textarea><br>
+        <button type="button" onclick="addCandidate()">Add Candidate</button>
+
+        <h2>Grade Level Chairperson</h2>
+        <textarea>Candidate 1 (Party List 1)</textarea><br>
+        <textarea>Candidate 2 (Party List 2)</textarea><br>
+        <textarea>Candidate 3 (Party List 3)</textarea><br>
+        <button type="button" onclick="addCandidate()">Add Candidate</button>
+
+        <h2>Grade Level Representatives</h2>
+        <textarea>Candidate 1 (Party List 1)</textarea><br>
+        <textarea>Candidate 2 (Party List 2)</textarea><br>
+        <textarea>Candidate 3 (Party List 3)</textarea><br>
+        <button type="button" onclick="addCandidate()">Add Candidate</button><br><br>
+        <input type="submit" value="Save"><br>
+        <button type="button" onClick="window.location.href='admin_user_landing.html';">Return</button><br><br>
+        <div id="addCandidate" style="display:none;">
+          <button type="button" onclick="addCandidate()" style="position: absolute; top: 5px; right: 5px">x</button>
+          <form>
+            <label for="name">Candidate Name</label><br>
+            <textarea id="name" name="name">Candidate 4</textarea><br><br>
+            <label for="partylists">Choose Party List</label><br>
+            <select name="partylists" id="partylists">
+              <option value="partylist_1">Party List 1</option>
+              <option value="partylist_2">Party List 2</option>
+              <option value="partylist_3">Party List 3</option>
+            </select><br><br>
+            <input type="submit" value="Save">
+          </form>
+        </div>
+        <script>
+          function addCandidate() {
+            var x = document.getElementById("addCandidate");
+              if (x.style.display === "none") {
+                x.style.display = "block";
+              } else {
+                x.style.display = "none";
+              }
+          }
+        </script>
+      </form>
+    </main>
+    <footer>
+      <a href="admin_main.html">Logout.</a>
+    </footer>
+  </body>
+</html>

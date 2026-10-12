@@ -13,14 +13,35 @@
     <header></header>
     <main>
       <h1>Log In</h1>
-      <form action="user_landing.html">
+      <form onSubmit="userSelect(event)" id="loginForm">
+        <select name="user" id="formSelect">
+          <option value="voter">Voter</option>
+          <option value="candidate">Candidate</option>
+        </select><br><br>
         <label for="uname">Username</label><br>
         <input type="text" id="uname" name="uname"><br>
         <label for="password">Password</label><br>
         <input type="password" id="password" name="password"><br><br>
         <input type="submit" value="Submit"><br><br>
-        <a href="signup.html">Don't have an account? Sign up.</a>
+        <a href="signup.html">Sign up</a>
+        <a href="admin_main.html">Admin Log In Page</a>
       </form>
+      <script>
+        function userSelect(event) {
+          event.preventDefault();
+
+          var select = document.getElementById("formSelect");
+          var selectedValue = select.value;
+
+          if (selectedValue === "voter") {
+            // alert("Voter selected!");
+            window.location.href = "user_landing.html";
+          } else if (selectedValue === "candidate") {
+            // alert("Candidate selected!");
+            window.location.href = "candidates_user_landing.html";
+          }
+        }
+      </script>
     </main>
     <footer></footer>
   </body>
